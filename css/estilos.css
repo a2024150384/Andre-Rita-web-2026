@@ -1,0 +1,94 @@
+/* IMAGEM PRINCIPAL (página inicial)
+   Mesma técnica da aula 3-4: a imagem ocupa a caixa toda
+   e o texto fica por cima dela, com position: absolute. */
+
+#img-principal{
+    position: relative;
+    height: 560px;
+    overflow: hidden;
+    background-color: #082f49;
+}
+
+#img-principal img{
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+/* Camada escura por cima da foto, para o texto branco se ler bem.
+   No telemóvel escurece de baixo para cima (o texto fica em baixo). */
+#img-principal::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(8, 47, 73, .9) 0%, rgba(8, 47, 73, .5) 55%, rgba(8, 47, 73, .1) 100%);
+}
+
+.txt-imagem{
+    position: absolute;
+    z-index: 1;          /* fica por cima da camada escura */
+    left: 1rem;
+    right: 1rem;
+    bottom: 2rem;
+    color: white;
+}
+
+.txt-imagem .etiqueta{
+    display: inline-block;
+    padding: .25rem .8rem;
+    border: solid 1px rgba(255, 255, 255, .5);
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.txt-imagem h1{
+    margin: 1rem 0;
+    font-size: 2.3em;
+    font-weight: bold;
+    line-height: 1.15;
+}
+
+.txt-imagem p{
+    max-width: 34rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.05em;
+    color: rgba(255, 255, 255, .85);
+}
+
+/* Tablet e computador */
+@media(min-width: 768px){
+    #img-principal,
+    #img-principal img{
+        height: 600px;
+    }
+
+    /* A camada escura passa a ir da esquerda (onde está o texto) para a direita */
+    #img-principal::after{
+        background: linear-gradient(to right, rgba(8, 47, 73, .9) 0%, rgba(8, 47, 73, .55) 45%, rgba(8, 47, 73, 0) 80%);
+    }
+
+    /* O texto fica à esquerda, centrado na vertical e alinhado com o logótipo:
+       (100% - 72rem) / 2 é o espaço livre de cada lado do conteúdo do site
+       (72rem = max-w-6xl do Tailwind) e 1rem é a margem interior (px-4). */
+    .txt-imagem{
+        left: max(1rem, calc((100% - 72rem) / 2 + 1rem));
+        right: auto;
+        top: 50%;
+        bottom: auto;
+        width: 640px;
+        max-width: 60%;
+        transform: translateY(-50%);
+    }
+
+    .txt-imagem h1{
+        font-size: 3.6em;
+    }
+}
