@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Packs · Mala Pronta</title>
+    <link rel="icon" href="imagens/logo.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="js/menu.js" defer></script>
+  </head>
+
+  <body
+    class="bg-slate-50 text-slate-900 font-['Poppins',sans-serif] antialiased min-h-screen flex flex-col"
+  >
+    <!-- Cabeçalho (igual em todas as páginas; mais tarde passa a um include em PHP) -->
+    <header class="bg-white border-b border-slate-200">
+      <div
+        class="mx-auto max-w-6xl w-full px-4 py-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-3"
+      >
+        <a href="index.html" class="flex items-center gap-2">
+          <img src="imagens/logo.svg" alt="" class="w-9 h-9" />
+          <span class="text-xl font-bold tracking-tight text-sky-900">Mala Pronta</span>
+          <span
+            class="hidden sm:inline text-xs uppercase tracking-widest text-slate-500"
+            >viagens à tua medida</span
+          >
+        </a>
+        <!-- Botão do menu: só visível em ecrãs pequenos; o comportamento está em js/menu.js -->
+        <button
+          type="button"
+          id="menu-botao"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+          class="md:hidden rounded border border-slate-300 px-3 py-1.5 text-sm font-medium hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-600 aria-expanded:bg-slate-900 aria-expanded:text-white aria-expanded:border-slate-900"
+        >
+          <span id="menu-icone" aria-hidden="true">☰</span> Menu
+        </button>
+        <nav
+          id="menu-principal"
+          aria-label="Principal"
+          class="hidden md:block w-full md:w-auto"
+        >
+          <ul
+            class="flex flex-col md:flex-row md:items-center gap-1 text-sm border-t border-slate-200 pt-3 md:border-0 md:pt-0"
+          >
+            <li>
+              <a
+                href="index.html"
+                class="block rounded px-3 py-1.5 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                >Início</a
+              >
+            </li>
+            <li>
+              <a
+                href="packs.html"
+                aria-current="page"
+                class="block rounded px-3 py-1.5 bg-sky-100 text-sky-800 font-medium"
+                >Packs</a
+              >
+            </li>
+            <li>
+              <a
+                href="contactos.html"
+                class="block rounded px-3 py-1.5 text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                >Contactos</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1 mx-auto max-w-6xl w-full px-4 py-8 flex flex-col gap-6">
+      <div class="flex flex-col gap-1">
+        <h1 class="font-bold tracking-tight text-sky-950 text-3xl sm:text-4xl">Packs de viagem</h1>
+        <p class="text-slate-600">
+          Todos os packs incluem o voo de ida e volta e o alojamento. O preço é por pessoa.
+        </p>
+      </div>
+
+      <!-- Lista de packs: 1 coluna no telemóvel, 2 no tablet e 3 no computador -->
+      <section aria-labelledby="t-lista" class="flex flex-col gap-4">
+        <h2 id="t-lista" class="font-semibold">9 packs disponíveis</h2>
+        <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <li>
+            <article
+              class="h-full rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+            >
+              <img
+                src="imagens/packs/praga.jpg"
+                alt="Ponte Carlos e o Castelo de Praga sobre o rio Vltava"
+                loading="lazy"
+                class="w-full aspect-[4/3] object-cover bg-slate-200"
+              />
+              <div class="p-4 flex flex-col gap-2 flex-1">
+                <span
+                  class="self-start rounded-full bg-violet-100 text-violet-800 text-xs font-semibold px-2 py-0.5"
+                  >Cidade</span
+                >
+                <h3 class="font-semibold leading-tight">Praga encantada</h3>
+                <p class="text-sm text-slate-500">Praga, Chéquia · 4 dias</p>
+              <p class="text-sm text-slate-700">Pontes de pedra, telhados vermelhos e um centro histórico que se percorre a pé.</p>
+              <p class="text-xs text-slate-500"><span class="font-semibold">Inclui:</span> Voo, 3 noites em hotel 3★, pequeno-almoço</p>
+                <p class="mt-auto pt-2 text-sky-800 font-bold">
+                  390 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
+                </p>
+              <a
+                href="contactos.html"
+                class="mt-2 text-center rounded border border-sky-700 text-sky-800 text-sm font-semibold px-4 py-2 hover:bg-sky-50"
+                >Pedir informações</a
+              >
+              </div>
+            </article>
+          </li>
+          <li>
+            <article
+              class="h-full rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+            >
+              <img
+                src="imagens/packs/acores.jpg"
+                alt="Vista aérea de uma lagoa rodeada de verde nos Açores"
+                loading="lazy"
+                class="w-full aspect-[4/3] object-cover bg-slate-200"
+              />
+              <div class="p-4 flex flex-col gap-2 flex-1">
+                <span
+                  class="self-start rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold px-2 py-0.5"
+                  >Aventura</span
+                >
+                <h3 class="font-semibold leading-tight">São Miguel natural</h3>
+                <p class="text-sm text-slate-500">Açores, Portugal · 5 dias</p>
+              <p class="text-sm text-slate-700">Lagoas em crateras, termas naturais e observação de baleias.</p>
+              <p class="text-xs text-slate-500"><span class="font-semibold">Inclui:</span> Voo, 4 noites em hotel 3★, carro alugado</p>
+                <p class="mt-auto pt-2 text-sky-800 font-bold">
+                  390 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
+                </p>
+              <a
+                href="contactos.html"
+                class="mt-2 text-center rounded border border-sky-700 text-sky-800 text-sm font-semibold px-4 py-2 hover:bg-sky-50"
+                >Pedir informações</a
+              >
+              </div>
+            </article>
+          </li>
+          <li>
+            <article
+              class="h-full rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+            >
+              <img
+                src="imagens/packs/marraquexe.jpg"
+                alt="Minarete da Koutoubia em Marraquexe, com a cordilheira do Atlas ao fundo"
+                loading="lazy"
+                class="w-full aspect-[4/3] object-cover bg-slate-200"
+              />
+              <div class="p-4 flex flex-col gap-2 flex-1">
+                <span
+                  class="self-start rounded-full bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-0.5"
+                  >Cultura</span
+                >
+                <h3 class="font-semibold leading-tight">Marraquexe com sabor</h3>
+                <p class="text-sm text-slate-500">Marraquexe, Marrocos · 6 dias</p>
+              <p class="text-sm text-slate-700">Mercados coloridos, riads tranquilos e uma noite no deserto.</p>
+              <p class="text-xs text-slate-500"><span class="font-semibold">Inclui:</span> Voo, 5 noites em riad, noite no deserto</p>
+                <p class="mt-auto pt-2 text-sky-800 font-bold">
+                  450 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
+                </p>
+              <a
+                href="contactos.html"
+                class="mt-2 text-center rounded border border-sky-700 text-sky-800 text-sm font-semibold px-4 py-2 hover:bg-sky-50"
+                >Pedir informações</a
+              >
+              </div>
+            </article>
+          </li>
+          <li>
+            <article
+              class="h-full rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+            >
+              <img
+                src="imagens/packs/roma.jpg"
+                alt="O Coliseu de Roma durante o dia"
+                loading="lazy"
+                class="w-full aspect-[4/3] object-cover bg-slate-200"
+              />
+              <div class="p-4 flex flex-col gap-2 flex-1">
+                <span
+                  class="self-start rounded-full bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-0.5"
+                  >Cultura</span
+                >
+                <h3 class="font-semibold leading-tight">Escapadinha em Roma</h3>
+                <p class="text-sm text-slate-500">Roma, Itália · 5 dias</p>
+              <p class="text-sm text-slate-700">Coliseu, Vaticano e as praças de Trastevere.</p>
+              <p class="text-xs text-slate-500"><span class="font-semibold">Inclui:</span> Voo, 4 noites em hotel 4★, entrada no Coliseu</p>
+                <p class="mt-auto pt-2 text-sky-800 font-bold">
+                  520 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
+                </p>
+              <a
+                href="contactos.html"
+                class="mt-2 text-center rounded border border-sky-700 text-sky-800 text-sm font-semibold px-4 py-2 hover:bg-sky-50"
+                >Pedir informações</a
+              >
+              </div>
+            </article>
+          </li>
+          <li>
+            <article
+              class="h-full rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+            >
+              <img
+                src="imagens/packs/paris.jpg"
+                alt="Torre Eiffel ao pôr do sol"
+                loading="lazy"
+                class="w-full aspect-[4/3] object-cover bg-slate-200"
+              />
+              <div class="p-4 flex flex-col gap-2 flex-1">
+                <span
+                  class="self-start rounded-full bg-violet-100 text-violet-800 text-xs font-semibold px-2 py-0.5"
+                  >Cidade</span
+                >
+                <h3 class="font-semibold leading-tight">Paris em 5 dias</h3>
+                <p class="text-sm text-slate-500">Paris, França · 5 dias</p>
+              <p class="text-sm text-slate-700">Museus, cafés e passeios à beira do Sena.</p>
+              <p class="text-xs text-slate-500"><span class="font-semibold">Inclui:</span> Voo, 4 noites em hotel 3★, passe de metro</p>
+                <p class="mt-auto pt-2 text-sky-800 font-bold">
+                  590 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
+                </p>
+              <a
+                href="contactos.html"
+                class="mt-2 text-center rounded border border-sky-700 text-sky-800 text-sm font-semibold px-4 py-2 hover:bg-sky-50"
+                >Pedir informações</a
+              >
+              </div>
+            </article>
+          </li>
+          <li>
+            <article
+              class="h-full rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+            >
+              <img
+                src="imagens/packs/santorini.jpg"
+                alt="Igrejas de cúpula azul em Oia, Santorini"
+                loading="lazy"
+                class="w-full aspect-[4/3] object-cover bg-slate-200"
+              />
+              <div class="p-4 flex flex-col gap-2 flex-1">
+                <span
+                  class="self-start rounded-full bg-sky-100 text-sky-800 text-xs font-semibold px-2 py-0.5"
+                  >Praia</span
+                >
+                <h3 class="font-semibold leading-tight">Santorini ao pôr do sol</h3>
+                <p class="text-sm text-slate-500">Santorini, Grécia · 6 dias</p>
+              <p class="text-sm text-slate-700">Casas brancas, cúpulas azuis e praias de areia vulcânica.</p>
+              <p class="text-xs text-slate-500"><span class="font-semibold">Inclui:</span> Voo, 5 noites em hotel 4★, transferes</p>
+                <p class="mt-auto pt-2 text-sky-800 font-bold">
+                  690 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
+                </p>
+              <a
+                href="contactos.html"
+                class="mt-2 text-center rounded border border-sky-700 text-sky-800 text-sm font-semibold px-4 py-2 hover:bg-sky-50"
+                >Pedir informações</a
+              >
+              </div>
+            </article>
+          </li>
+          <li>
+            <article
+              class="h-full rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+            >
+              <img
+                src="imagens/packs/cabo-verde.jpg"
+                alt="Palmeira junto ao mar na Ilha do Sal"
+                loading="lazy"
+                class="w-full aspect-[4/3] object-cover bg-slate-200"
+              />
+              <div class="p-4 flex flex-col gap-2 flex-1">
+                <span
+                  class="self-start rounded-full bg-sky-100 text-sky-800 text-xs font-semibold px-2 py-0.5"
+                  >Praia</span
+                >
+                <h3 class="font-semibold leading-tight">Sal tudo incluído</h3>
+                <p class="text-sm text-slate-500">Ilha do Sal, Cabo Verde · 7 dias</p>
+              <p class="text-sm text-slate-700">Sol garantido, água morna e quilómetros de areia branca.</p>
+              <p class="text-xs text-slate-500"><span class="font-semibold">Inclui:</span> Voo, 6 noites em resort 4★, tudo incluído</p>
+                <p class="mt-auto pt-2 text-sky-800 font-bold">
+                  740 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
+                </p>
+              <a
+                href="contactos.html"
+                class="mt-2 text-center rounded border border-sky-700 text-sky-800 text-sm font-semibold px-4 py-2 hover:bg-sky-50"
+                >Pedir informações</a
+              >
+              </div>
+            </article>
+          </li>
+          <li>
+            <article
+              class="h-full rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+            >
+              <img
+                src="imagens/packs/islandia.jpg"
+                alt="Cascata de Skógafoss, na Islândia"
+                loading="lazy"
+                class="w-full aspect-[4/3] object-cover bg-slate-200"
+              />
+              <div class="p-4 flex flex-col gap-2 flex-1">
+                <span
+                  class="self-start rounded-full bg-emerald-100 text-emerald-800 text-xs font-semibold px-2 py-0.5"
+                  >Aventura</span
+                >
+                <h3 class="font-semibold leading-tight">Islândia: Círculo Dourado</h3>
+                <p class="text-sm text-slate-500">Reiquiavique, Islândia · 5 dias</p>
+              <p class="text-sm text-slate-700">Géiseres, cascatas e, no inverno, auroras boreais.</p>
+              <p class="text-xs text-slate-500"><span class="font-semibold">Inclui:</span> Voo, 4 noites em hotel 3★, excursão guiada</p>
+                <p class="mt-auto pt-2 text-sky-800 font-bold">
+                  890 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
+                </p>
+              <a
+                href="contactos.html"
+                class="mt-2 text-center rounded border border-sky-700 text-sky-800 text-sm font-semibold px-4 py-2 hover:bg-sky-50"
+                >Pedir informações</a
+              >
+              </div>
+            </article>
+          </li>
+          <li>
+            <article
+              class="h-full rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+            >
+              <img
+                src="imagens/packs/nova-iorque.jpg"
+                alt="Vista aérea dos arranha-céus de Nova Iorque"
+                loading="lazy"
+                class="w-full aspect-[4/3] object-cover bg-slate-200"
+              />
+              <div class="p-4 flex flex-col gap-2 flex-1">
+                <span
+                  class="self-start rounded-full bg-violet-100 text-violet-800 text-xs font-semibold px-2 py-0.5"
+                  >Cidade</span
+                >
+                <h3 class="font-semibold leading-tight">Nova Iorque em 6 dias</h3>
+                <p class="text-sm text-slate-500">Nova Iorque, Estados Unidos · 6 dias</p>
+              <p class="text-sm text-slate-700">Arranha-céus, musicais da Broadway e o Central Park.</p>
+              <p class="text-xs text-slate-500"><span class="font-semibold">Inclui:</span> Voo, 5 noites em hotel 3★, CityPASS</p>
+                <p class="mt-auto pt-2 text-sky-800 font-bold">
+                  1090 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
+                </p>
+              <a
+                href="contactos.html"
+                class="mt-2 text-center rounded border border-sky-700 text-sky-800 text-sm font-semibold px-4 py-2 hover:bg-sky-50"
+                >Pedir informações</a
+              >
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Rodapé (igual em todas as páginas; mais tarde passa a um include em PHP) -->
+    <footer class="border-t border-slate-200 bg-white">
+      <div
+        class="mx-auto max-w-6xl w-full px-4 py-6 text-xs text-slate-500 flex flex-wrap justify-between gap-2"
+      >
+        <p>Mala Pronta · Desenvolvimento para a Web · ISCAC 2026/2027</p>
+        <p>André Alves e Rita Pereira · fotografias: Unsplash e Pexels</p>
+      </div>
+    </footer>
+  </body>
+</html>
