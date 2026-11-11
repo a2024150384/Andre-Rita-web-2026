@@ -11,14 +11,13 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
     />
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <script src="js/menu.js" defer></script>
   </head>
 
   <body
     class="bg-slate-50 text-slate-900 font-['Poppins',sans-serif] antialiased min-h-screen flex flex-col"
   >
-    <!-- Cabeçalho (igual em todas as páginas; mais tarde passa a um include em PHP) -->
     <header class="bg-white border-b border-slate-200">
       <div
         class="mx-auto max-w-6xl w-full px-4 py-4 flex flex-wrap items-center justify-between gap-x-4 gap-y-3"
@@ -31,7 +30,6 @@
             >viagens à tua medida</span
           >
         </a>
-        <!-- Botão do menu: só visível em ecrãs pequenos; o comportamento está em js/menu.js -->
         <button
           type="button"
           id="menu-botao"
@@ -77,7 +75,6 @@
     </header>
 
     <main class="flex-1">
-      <!-- IMAGEM PRINCIPAL  -->
       <div id="img-principal">
         <img src="imagens/inicio.jpg" alt="Viajante com uma mala a ver um avião a descolar, numa sala de embarque ao amanhecer">
         <div class="txt-imagem">
@@ -99,7 +96,6 @@
       </div>
 
       <div class="mx-auto max-w-6xl px-4 py-10 flex flex-col gap-12">
-        <!-- Packs em destaque -->
         <section aria-labelledby="t-destaques" class="flex flex-col gap-4">
           <div class="flex flex-wrap items-baseline justify-between gap-2">
             <h2 id="t-destaques" class="font-bold tracking-tight text-sky-950 text-2xl">Packs mais procurados</h2>
@@ -107,7 +103,7 @@
               >Ver todos</a
             >
           </div>
-          <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <ul id="packs-destaque" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <li>
             <article
               class="h-full rounded-lg border border-slate-200 bg-white overflow-hidden flex flex-col hover:shadow-md transition-shadow"
@@ -128,6 +124,11 @@
                 <p class="mt-auto pt-2 text-sky-800 font-bold">
                   520 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
                 </p>
+                <a
+                  href="contactos.html"
+                  class="btn"
+                  >Pedir informações</a
+                >
               </div>
             </article>
           </li>
@@ -151,6 +152,11 @@
                 <p class="mt-auto pt-2 text-sky-800 font-bold">
                   590 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
                 </p>
+                <a
+                  href="contactos.html"
+                  class="btn"
+                  >Pedir informações</a
+                >
               </div>
             </article>
           </li>
@@ -169,11 +175,16 @@
                   class="self-start rounded-full bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-0.5"
                   >Cultura</span
                 >
-                <h3 class="font-semibold leading-tight">Marraquexe com sabor</h3>
+                <h3 class="font-semibold leading-tight">Marraquexe</h3>
                 <p class="text-sm text-slate-500">Marraquexe, Marrocos · 6 dias</p>
                 <p class="mt-auto pt-2 text-sky-800 font-bold">
                   450 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
                 </p>
+                <a
+                  href="contactos.html"
+                  class="btn"
+                  >Pedir informações</a
+                >
               </div>
             </article>
           </li>
@@ -197,13 +208,17 @@
                 <p class="mt-auto pt-2 text-sky-800 font-bold">
                   690 € <span class="text-xs font-normal text-slate-500">por pessoa</span>
                 </p>
+                <a
+                  href="contactos.html"
+                  class="btn"
+                  >Pedir informações</a
+                >
               </div>
             </article>
           </li>
           </ul>
         </section>
 
-        <!-- Como funciona -->
         <section aria-labelledby="t-como" class="flex flex-col gap-4">
           <h2 id="t-como" class="font-bold tracking-tight text-sky-950 text-2xl">Como funciona</h2>
           <ol class="grid gap-4 md:grid-cols-3">
@@ -234,29 +249,33 @@
           </ol>
         </section>
 
-        <!-- Opiniões de clientes -->
         <section aria-labelledby="t-opinioes" class="flex flex-col gap-4">
           <h2 id="t-opinioes" class="font-bold tracking-tight text-sky-950 text-2xl">O que dizem os nossos clientes</h2>
           <ul class="grid gap-4 md:grid-cols-3">
             <li class="rounded-lg border border-slate-200 bg-white p-5 flex flex-col gap-2">
-              <p class="text-amber-500 tracking-widest" aria-label="5 estrelas em 5">★★★★★</p>
+              <p class="estrelas" role="img" aria-label="5 estrelas em 5">
+                <span class="estrela"></span><span class="estrela"></span><span class="estrela"></span><span class="estrela"></span><span class="estrela"></span>
+              </p>
               <p>A Mala Pronta organizou tudo e poupámos mais de 200 €.</p>
               <p class="mt-auto text-sm font-semibold text-slate-500">Marta, Porto</p>
             </li>
             <li class="rounded-lg border border-slate-200 bg-white p-5 flex flex-col gap-2">
-              <p class="text-amber-500 tracking-widest" aria-label="5 estrelas em 5">★★★★★</p>
+              <p class="estrelas" role="img" aria-label="5 estrelas em 5">
+                <span class="estrela"></span><span class="estrela"></span><span class="estrela"></span><span class="estrela"></span><span class="estrela"></span>
+              </p>
               <p>Encontrámos a viagem certa para o nosso orçamento em minutos.</p>
               <p class="mt-auto text-sm font-semibold text-slate-500">João, Lisboa</p>
             </li>
             <li class="rounded-lg border border-slate-200 bg-white p-5 flex flex-col gap-2">
-              <p class="text-amber-500 tracking-widest" aria-label="5 estrelas em 5">★★★★★</p>
+              <p class="estrelas" role="img" aria-label="5 estrelas em 5">
+                <span class="estrela"></span><span class="estrela"></span><span class="estrela"></span><span class="estrela"></span><span class="estrela"></span>
+              </p>
               <p>Atendimento simples e rápido. Já estamos a planear a próxima!</p>
               <p class="mt-auto text-sm font-semibold text-slate-500">Ana, Coimbra</p>
             </li>
           </ul>
         </section>
 
-        <!-- Chamada final -->
         <section
           class="rounded-2xl bg-gradient-to-r from-sky-100 to-orange-100 px-6 py-10 text-center flex flex-col items-center gap-4"
         >
@@ -266,7 +285,6 @@
       </div>
     </main>
 
-    <!-- Rodapé (igual em todas as páginas; mais tarde passa a um include em PHP) -->
     <footer class="border-t border-slate-200 bg-white">
       <div
         class="mx-auto max-w-6xl w-full px-4 py-6 text-xs text-slate-500 flex flex-wrap justify-between gap-2"

@@ -1,12 +1,12 @@
 /* IMAGEM PRINCIPAL (página inicial)
-   Mesma técnica da aula 3-4: a imagem ocupa a caixa toda
+   A imagem ocupa a caixa toda
    e o texto fica por cima dela, com position: absolute. */
 
 #img-principal{
     position: relative;
     height: 560px;
     overflow: hidden;
-    background-color: #082f49;
+    background-color: rgb(8, 47, 73);
 }
 
 #img-principal img{
@@ -91,4 +91,35 @@
     .txt-imagem h1{
         font-size: 3.6em;
     }
+}
+
+/* ESTRELAS DAS OPINIÕES
+   A estrela não está escrita no HTML: é o CSS que a acrescenta
+   com ::before, através do código Unicode da estrela (2605). */
+.estrelas{
+    display: flex;
+    gap: .15rem;
+}
+
+.estrela::before{
+    content: "\2605"; /* Código Unicode da estrela */
+    font-size: 24px;
+    color: gold;
+}
+
+/* BOTÃO "PEDIR INFORMAÇÕES" NOS PACKS EM DESTAQUE
+   Igual ao botão da página dos packs. */
+#packs-destaque .btn{
+    margin-top: .5rem;
+    padding: .5rem 1rem;
+    border: solid 1px rgb(3, 105, 161);
+    border-radius: .25rem;
+    color: rgb(7, 89, 133);
+    font-size: .875em;
+    font-weight: bold;
+    text-align: center;
+}
+
+#packs-destaque .btn:hover{
+    background-color: rgb(240, 249, 255);
 }
