@@ -1,0 +1,26 @@
+/* PÁGINA DE CONTACTOS
+   Os 7 campos do formulário e os 3 cartões da agência
+   partilham o mesmo estilo, definido aqui uma só vez. */
+
+/* Campos do formulário (input, select e textarea) */
+#formulario .campo{
+    width: 100%;
+    min-width: 0;
+    padding: .5rem .75rem;
+    border: solid 1px rgb(203, 213, 225);
+    border-radius: .25rem;
+    background-color: rgb(248, 250, 252);
+}
+
+/* Campo selecionado: contorno azul */
+#formulario .campo:focus{
+    outline: solid 2px rgb(2, 132, 199);
+}
+
+/* Cartões com o email, o telefone e a loja */
+#agencia .card{
+    padding: 1rem;
+    border: solid 1px rgb(226, 232, 240);
+    border-radius: .5rem;
+    background-color: white;
+}
